@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر المنتجات</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            text-align: center;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            text-align: center;
+            padding: 20px 0;
+        }
+        .header img {
+            width: 50%;
+            max-width: 600px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        .product-card {
+            width: 300px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+            display: inline-block;
+        }
+        .product-card img {
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .product-card p {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="views/assets/source/header.jpg" alt="شعار المتجر">
+    </div>
+    <div class="container">
+        <div class="product-card">
+            <img src="views/assets/source/top3.png" alt="سالمون نيجيري">
+            <p>سالمون نيجيري - 5.750 د.ك</p>
+            <a href="#" class="btn">إضافة إلى السلة</a>
+        </div>
+        <div class="product-card">
+            <img src="views/assets/source/top3.png" alt="روبيان إيراني">
+            <p>روبيان إيراني - 3.500 د.ك</p>
+            <a href="#" class="btn">إضافة إلى السلة</a>
+        </div>
+    </div>
+</body>
+</html>

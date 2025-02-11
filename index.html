@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر إلكتروني</title>
+    <style>
+        /* تنسيق عام */
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* توسيط أفقي */
+            justify-content: center; /* توسيط عمودي */
+            min-height: 100vh; /* لجعل الصفحة تأخذ ارتفاع الشاشة بالكامل */
+            background-color: #f4f4f4; /* لون خلفية الصفحة */
+        }
+
+        /* الرأسية */
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            width: 100%; /* لجعل الرأسية تأخذ العرض الكامل */
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header-content img {
+            max-width: 550px; /* حجم صورة الرأسية */
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        header nav ul li {
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        header nav ul li a:hover {
+            color: #28a745;
+        }
+
+        /* المحتوى الرئيسي */
+        main {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* توسيط المحتوى أفقيًا */
+            text-align: center; /* توسيط النص */
+        }
+
+        .product {
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            width: 300px; /* عرض ثابت لكل منتج */
+            background-color: white; /* لون خلفية المنتج */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+        }
+
+        .product img {
+            max-width: 250px; /* حجم صور المنتجات */
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            color: green;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .add-to-cart {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .add-to-cart:hover {
+            background-color: #218838;
+        }
+
+        /* التذييل */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 100%; /* لجعل التذييل يأخذ العرض الكامل */
+        }
+
+        footer a {
+            color: #28a745;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الرأسية -->
+    <header>
+        <div class="header-content">
+            <img src="nfc2.png" alt="شعار المتجر">
+            <h1>متجر إلكتروني</h1>
+        </div>
+
+    </header>
+
+    <!-- المحتوى الرئيسي -->
+    <main>
+        <h2>المنتجات</h2>
+
+        <div class="product">
+            <img src="iranian-medium-robian-1kg.jpg" alt="کروس سپلیس ترکی">
+            <p>1500~1000 کروس تا کروس سپلیس ترکی حجم 10 کروس</p>
+            <p class="price">د.ن.32,000</p>
+            <button class="add-to-cart" onclick="redirectToNextPage()">اضافه إلى السلة</button>
+        </div>
+
+        <div class="product">
+            <img src="iranian-medium-robian-1kg.jpg" alt="سلمون ننجبری">
+            <p>کیلو سلمون ننجبری</p>
+            <p class="price">د.ن.5,750</p>
+            <button class="add-to-cart" onclick="redirectToNextPage()">اضافه إلى السلة</button>
+        </div>
+
+        <div class="product">
+            <img src="placeholder-image.jpg" alt="اضافه">
+            <p>اضافه</p>
+            <p class="price">د.ن.3,500</p>
+            <button class="add-to-cart" onclick="redirectToNextPage()">اضافه إلى السلة</button>
+        </div>
+
+        <div class="product">
+            <img src="placeholder-image.jpg" alt="اضافه">
+            <p>اضافه</p>
+            <p class="price">د.ن.4,500</p>
+            <button class="add-to-cart" onclick="redirectToNextPage()">اضافه إلى السلة</button>
+        </div>
+    </main>
+
+    <!-- التذييل -->
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2023 | <a href="http://www.leadlab.com/#">متجر إلكتروني</a></p>
+    </footer>
+
+    <script>
+        function redirectToNextPage() {
+            // قم بتغيير الرابط هنا إلى الصفحة التي تريد توجيه المستخدم إليها
+            window.location.href = "next-page.html";
+        }
+    </script>
+
+</body>
+</html>
