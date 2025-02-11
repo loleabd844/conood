@@ -1,79 +1,100 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>متجر المنتجات</title>
+    <title>حدد موقعك</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            direction: rtl;
-            text-align: center;
-            background-color: #f8f8f8;
+            text-align: right;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             margin: 0;
-            padding: 0;
+            flex-direction: column;
         }
-        .header {
-            text-align: center;
-            padding: 20px 0;
+        .location-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
         }
-        .header img {
-            width: 50%;
-            max-width: 600px;
-            height: auto;
-            display: block;
-            margin: 0 auto;
+        .location-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
-        .container {
-            width: 80%;
-            margin: 20px auto;
-        }
-        .product-card {
-            width: 300px;
-            background: white;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin: 20px;
-            display: inline-block;
-        }
-        .product-card img {
-            width: 100%;
-            border-radius: 10px;
-            object-fit: cover;
-        }
-        .product-card p {
-            font-size: 18px;
-            font-weight: bold;
-            margin-top: 10px;
-        }
-        .btn {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background: #28a745;
+        .selected {
+            background-color: black;
             color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 10px;
+        }
+        .icon {
+            font-size: 18px;
+        }
+        .form-container {
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .form-input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 16px;
+            width: 100%;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <img src="views/assets/source/header.jpg" alt="شعار المتجر">
+    <h3>حدد موقعك</h3>
+    <div class="location-container">
+        <button class="location-btn selected" onclick="selectLocation(this)">
+            <span class="icon">🏠</span> البيت
+        </button>
+        <button class="location-btn" onclick="selectLocation(this)">
+            <span class="icon">💼</span> العمل
+        </button>
+        <button class="location-btn" onclick="selectLocation(this)">
+            <span class="icon">📍</span> العميل
+        </button>
     </div>
-    <div class="container">
-        <div class="product-card">
-            <img src="views/assets/source/top3.png" alt="سالمون نيجيري">
-            <p>سالمون نيجيري - 5.750 د.ك</p>
-            <a href="#" class="btn">إضافة إلى السلة</a>
-        </div>
-        <div class="product-card">
-            <img src="views/assets/source/top3.png" alt="روبيان إيراني">
-            <p>روبيان إيراني - 3.500 د.ك</p>
-            <a href="#" class="btn">إضافة إلى السلة</a>
-        </div>
+    
+    <div class="form-container">
+        <input type="text" class="form-input" id="name" placeholder="الاسم">
+        <input type="text" class="form-input" id="address" placeholder="العنوان">
+        <input type="text" class="form-input" id="apartment" placeholder="الشقة / البناية السكنية">
+        <input type="text" class="form-input" id="phone" placeholder="رقم الهاتف" value="+965">
+        <input type="text" class="form-input" id="instructions" placeholder="ضع تعليمات توصيل للسائق">
     </div>
+
+    <button class="location-btn" onclick="validateAndRedirect()">انتقال إلى الصفحة الثانية</button>
+
+    <script>
+        function selectLocation(button) {
+            document.querySelectorAll('.location-btn').forEach(btn => btn.classList.remove('selected'));
+            button.classList.add('selected');
+        }
+
+        function validateAndRedirect() {
+            let name = document.getElementById("name").value.trim();
+            let address = document.getElementById("address").value.trim();
+            let apartment = document.getElementById("apartment").value.trim();
+            let phone = document.getElementById("phone").value.trim();
+
+            if (name === "" || address === "" || apartment === "" || phone === "") {
+                alert("يرجى ملء جميع الحقول المطلوبة قبل المتابعة.");
+            } else {
+                window.location.href = 'confirmation.html'; // تأكد من وجود صفحة confirmation.html
+            }
+        }
+    </script>
 </body>
 </html>
